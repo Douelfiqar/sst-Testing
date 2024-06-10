@@ -3,22 +3,30 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "sst bind next dev",
+    "prisma:generate": "prisma generate",
+    "build": "npm run prisma:generate && next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.592.0",
+    "@aws-sdk/s3-request-presigner": "^3.592.0",
+    "@prisma/client": "^5.15.0",
+    "next": "14.2.3",
     "react": "^18",
-    "react-dom": "^18",
-    "next": "14.2.3"
+    "react-dom": "^18"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "aws-cdk-lib": "2.142.1",
+    "constructs": "10.3.0",
     "postcss": "^8",
-    "tailwindcss": "^3.4.1"
+    "prisma": "^5.15.0",
+    "sst": "^2.43.0",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
   }
 }
