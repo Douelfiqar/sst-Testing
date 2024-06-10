@@ -13,9 +13,6 @@ export default {
       const bucket = new Bucket(stack, 'public');
       const site = new NextjsSite(stack, 'site', {
         bind: [bucket],
-        environment: {
-          NEXT_PUBLIC_BUCKET_NAME: bucket.bucketName,
-        },
       });
 
       stack.addOutputs({
