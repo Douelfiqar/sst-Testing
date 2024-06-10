@@ -20,7 +20,7 @@ export async function getServerSideProps() {
   const command = new PutObjectCommand({
     ACL: "public-read",
     Key: crypto.randomUUID(),
-    Bucket: process.env.NEXT_PUBLIC_BUCKET_NAME!,
+    Bucket: Bucket.public.bucketName,
   });
   const url = await getSignedUrl(new S3Client({}), command);
 
