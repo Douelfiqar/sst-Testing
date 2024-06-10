@@ -12,7 +12,6 @@ export default {
     app.stack(function Site({ stack }: StackContext) {
       const bucket = new Bucket(stack, 'public');
       const site = new NextjsSite(stack, 'site', {
-        path: 'packages/web',
         bind: [bucket],
         environment: {
           NEXT_PUBLIC_BUCKET_NAME: bucket.bucketName,
