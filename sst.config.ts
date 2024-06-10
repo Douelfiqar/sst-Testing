@@ -12,6 +12,7 @@ export default {
     app.stack(function Site({ stack }: StackContext) {
       const bucket = new Bucket(stack, 'public');
       const site = new NextjsSite(stack, 'site', {
+        permissions: [bucket],
         bind: [bucket],
       });
 
